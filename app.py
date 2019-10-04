@@ -6,8 +6,8 @@ from sklearn.naive_bayes import MultinomialNB
 import joblib
 
 # load model
-cv = pickle.load(open("model_build/vector.pickel", "rb"))
-NB_spam_model = open('model_build/NB_spam_model.pkl', 'rb')
+cv = pickle.load(open("models/vector.pickel", "rb"))
+NB_spam_model = open('models/NB_spam_model.pkl', 'rb')
 clf = joblib.load(NB_spam_model)
 
 # app
