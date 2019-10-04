@@ -32,10 +32,14 @@ __`❍ pip3 install -r requirements.txt`__
 
 __`❍ python app.py`__
 
-**8)** Open your browser and type in this URL which is an equivalent of a GET request to view the json format for perfoming a POST request:
+**6)** Open your browser and type in this URL which is an equivalent of a GET request to view the json format for perfoming a POST request:
 
 __`❍ http://127.0.0.1:5000/`__
 
-**6)** To run GET and POST requests on the API download [Advanced REST client](https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo/related):
+**7)** To run GET and POST requests on the API download [Advanced REST client](https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo/related):
+
+**8)** To run tests on the GET and POST requests:
+
+__`❍ cd tests && python test.py`__
 
 __*Happy developing!*__
