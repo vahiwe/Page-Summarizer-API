@@ -1,3 +1,5 @@
+""" API for machine learning
+"""
 import pickle
 import joblib
 from flask import Flask, request, jsonify
@@ -7,21 +9,26 @@ from flask import Flask, request, jsonify
 CV = pickle.load(open("models/vector.pickel", "rb"))
 MODEL = open('models/NB_spam_model.pkl', 'rb')
 CLF = joblib.load(MODEL)
+REPORT = "This is SMS spam detection model. Use the format {'message': 'SMS message'} and POST to get prediction."  # pylint: disable=line-too-long
 
 # app
-app = Flask(__name__)
-
-# routes
+APP = Flask(__name__)
 
 
-@app.route('/', methods=['GET'])
+@APP.route('/', methods=['GET'])
 def home():
+    """
+    GET Request
+    """
     # Give message to user
-    return {"message": "This is SMS spam detection model. Use the format {'message': 'SMS message'} and POST to get prediction."}
+    return {"message": REPORT}
 
 
-@app.route('/', methods=['POST'])
+@APP.route('/', methods=['POST'])
 def predict():
+    """
+    POST Request
+    """
     # get data
     data = request.get_json(force=True)
     data = data['message']
@@ -43,4 +50,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    APP.run(port=5000, debug=True)
