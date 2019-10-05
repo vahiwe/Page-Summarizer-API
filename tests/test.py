@@ -1,7 +1,6 @@
-from sure import expect
+import unittest
 import requests
 import httpretty
-import unittest
 
 
 class RestTest(unittest.TestCase):

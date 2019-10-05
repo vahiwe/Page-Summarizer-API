@@ -1,14 +1,12 @@
-from flask import Flask, render_template, url_for, request, jsonify
-import pandas as pd
 import pickle
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.naive_bayes import MultinomialNB
 import joblib
+from flask import Flask, request, jsonify
+
 
 # load model
-cv = pickle.load(open("models/vector.pickel", "rb"))
-NB_spam_model = open('models/NB_spam_model.pkl', 'rb')
-clf = joblib.load(NB_spam_model)
+CV = pickle.load(open("models/vector.pickel", "rb"))
+MODEL = open('models/NB_spam_model.pkl', 'rb')
+CLF = joblib.load(MODEL)
 
 # app
 app = Flask(__name__)
@@ -29,10 +27,10 @@ def predict():
     data = data['message']
     data = [data]
     # convert data into array
-    vect = cv.transform(data).toarray()
+    vect = CV.transform(data).toarray()
 
     # predictions
-    my_prediction = clf.predict(vect)
+    my_prediction = CLF.predict(vect)
 
     # check predicted value
     if my_prediction[0] == 0:
