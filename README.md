@@ -7,18 +7,17 @@
 </div>
 
 ## :page_with_curl: _About_
-- This is a Page Summarizer API 
-- Requirements of the system can be found in [Task 2](https://docs.google.com/document/d/1IZs92nfnh85d7zwQquV25chc0NXsBZUf0KxqxqKBAsU/edit)
+- This is a SMS Spam Detection API
 
 ## :page_with_curl: _Installation Guide_
 
 **1)** Fire up your favourite console & clone this repo somewhere:
 
-__`❍ git clone https://github.com/vahiwe/Page-Summarizer-API.git`__
+__`❍ git clone https://github.com/vahiwe/SMS-Spam-Detection-API.git`__
 
 **2)** Enter this directory:
 
-__`❍ cd Page-Summarizer-API`__
+__`❍ cd SMS-Spam-Detection-API`__
 
 **3)** Update pip:
 
